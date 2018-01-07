@@ -19,6 +19,6 @@ const combination = Array.from({
 const allCombinations = [];
 
 generateCombinationsWithoutRep(n, k, 0, combination, allCombinations);
-console.log(allCombinations.length);
 
+console.log(allCombinations.length);
 allCombinations.forEach(combination => console.log(combination.join(' ')));

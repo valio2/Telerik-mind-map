@@ -26,6 +26,6 @@ const used = Array.from({
 });
 const allVariations = [];
 generateVariationsWithoutRep(n, k, 0, variation, used, allVariations);
-console.log(allVariations.length);
 
-// allVariations.forEach(variation => console.log(variation.join(' ')));
+console.log(allVariations.length);
+allVariations.forEach(variation => console.log(variation.join(' ')));
