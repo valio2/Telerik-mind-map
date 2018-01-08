@@ -1,13 +1,14 @@
-const generateCombinationsWithoutRep = (n, k, index, combination, allCombinations) => {
+const generateCombinationsWithoutRep = (n, k, index, combination, allCombinations, rep) => {
     if (index === k) {
         allCombinations.push([...combination]);
         return;
     }
 
-    const start = index ? combination[index - 1] + 1 : 1;
+    let addition = rep ? 0 : 1;
+    const start = index ? combination[index - 1] + addition : 1;
     for (let i = start; i <= n; i += 1) {
         combination[index] = i;
-        generateCombinationsWithoutRep(n, k, index + 1, combination, allCombinations);
+        generateCombinationsWithoutRep(n, k, index + 1, combination, allCombinations, rep);
     }
 }
 
@@ -18,7 +19,7 @@ const combination = Array.from({
 });
 const allCombinations = [];
 
-generateCombinationsWithoutRep(n, k, 0, combination, allCombinations);
+generateCombinationsWithoutRep(n, k, 0, combination, allCombinations, true); // true defines if we want repetitions or not
 
 console.log(allCombinations.length);
 allCombinations.forEach(combination => console.log(combination.join(' ')));
