@@ -10,7 +10,7 @@ const rootNode = document.getElementsByTagName('html')[0];
 let count = 0;
 for (const node of traverseDomWithDfs(rootNode)) {
     count++;
-    console.log(node);
+    // console.log(node);
     if (node.innerHTML === 'Learn more') {
         node.style.display = 'none';
         break;
